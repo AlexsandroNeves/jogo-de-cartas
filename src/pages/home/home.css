@@ -1,0 +1,29 @@
+.container--primary{
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.h2--subtitle{
+
+    text-align: center;
+    margin: 30px 0;
+    font-size: 32px;
+    color: #55286F;
+}
+
+.input--buscar{
+    width: 650px;
+    height: 45px;
+    outline: none;
+    border-radius:4px ;
+    border: 1px solid #c3c3c3;
+}
+
+
+
+.section--pesquisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
