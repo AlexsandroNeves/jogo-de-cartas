@@ -14,9 +14,7 @@ const Menu = () => {
                     <li>
                         <Link to="/jogo-de-cartas">Jogo de cartas</Link>
                     </li>
-                    <li>
-                        <Link to="/contatos">contato</Link>
-                    </li>
+                  
                 </ul>
             </nav>
 

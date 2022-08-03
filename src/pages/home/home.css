@@ -41,7 +41,7 @@
 
 .section--card {
     margin: 20px;
-    text-align: center;
+    
 }
 
 h2{
@@ -54,6 +54,26 @@ h2{
     width: 100px;
 }
 
-p.card--suit{
-font-size: 12px;
+p.card--suit {
+    font-size: 11px;
+    line-height: 23px;
+    margin-left: 6px;
+    font-weight: bold;
+    color: #55286F;
+}
+
+
+@media(max-width:800px){
+        .input--buscar{
+            width: 90%;
+        }
+
+        .container--cards{
+            width: 90%;
+        }
+
+        .section--card {
+            margin: 10px;
+        }
+
 }
