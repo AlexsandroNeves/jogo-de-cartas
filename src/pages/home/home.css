@@ -1,10 +1,10 @@
-.container--primary{
+.container--primary {
     width: 100%;
     max-width: 1240px;
     margin: 0 auto;
 }
 
-.h2--subtitle{
+.h2--subtitle {
 
     text-align: center;
     margin: 30px 0;
@@ -12,18 +12,48 @@
     color: #55286F;
 }
 
-.input--buscar{
+.input--buscar {
     width: 650px;
     height: 45px;
     outline: none;
-    border-radius:4px ;
+    border-radius: 4px;
     border: 1px solid #c3c3c3;
+    padding-left: 10px;
 }
 
 
 
-.section--pesquisa{
+.section--pesquisa {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.container--cards {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.section--card {
+    margin: 20px;
+    text-align: center;
+}
+
+h2{
+    margin: 30px;
+    text-align: center;
+    color: #55286F;
+}
+
+.img--cards {
+    width: 100px;
+}
+
+p.card--suit{
+font-size: 12px;
 }

@@ -1,50 +1,61 @@
-import { Footer } from '../../Components/footer/Footer'
+
 import { useEffect, useState } from "react";
 import './home.css'
 import { Cartas } from '../../types/types'
-import axios from 'axios';
 import { Button } from '../../componentStyles/component';
-import cartas from '../../api/cartas.json';
+import '../../api/cartas.json';
+import axios from 'axios';
 
 const Home = () => {
 
     const [cartas, setCartas] = useState<Cartas[]>([])
+    const [busca, setBusca] = useState('')
+
+
     useEffect(() => {
-
-        axios.get('../../api/cartas.json')
-            .then(res => { setCartas(res.data.cards) })
-
+        axios.get(`http://localhost:3000/cards?q=${busca}`)
+            .then(res => {
+                setCartas(res.data)
+            });
     })
 
+    const buscarCartas =(e:any)=>{
+       e.preventDefault()
+       console.log('botao clicado');
+    }
     return (
         <>
             <main className="container--primary">
                 <section className='section--buscar' >
                     <div className='container--buscar'>
-                        <h2  className='h2--subtitle'>Buscar uma carta</h2>
+                        <h2 className='h2--subtitle'>Buscar uma carta</h2>
                         <div className='section--pesquisa'>
-                        <input type="text" className='input--buscar' placeholder='Digite um valor de carta...' />
-                        <Button> Buscar</Button>
+                            <input type="text" className='input--buscar' placeholder='Digite um valor de carta...'
+                                onChange={(ev) => setBusca(ev.target.value)}
+                                value={busca} />
+                            <Button onClick={buscarCartas}> Buscar</Button>
                         </div>
                     </div>
                 </section>
             </main>
 
-            {cartas.map((item, index) => (
+            <h2> Cartas do jogo</h2>
+            <div className='container--cards'>
 
-                <div key={item.code}>
 
-                    <img src={item.image} alt="" />
+                {cartas.map((item, index) => (
 
-                    <p>Tipo: {item.suit}</p>
-                    <p>valor:{item.value}</p>
+                    <div className='section--card'>
+                        <div key={index}>
+                            <img className='img--cards' src={item.image} alt="" />
+                            <p className='card--suit'> <strong>Tipo:</strong> {item.suit} </p>
+                            <p className='card--suit'><strong>Valor:</strong> {item.value}</p>
+                        </div>
+                    </div>
 
-                </div>
+                ))}
+            </div>
 
-            ))
-            }
-
-            <Footer />
         </>
 
     )
