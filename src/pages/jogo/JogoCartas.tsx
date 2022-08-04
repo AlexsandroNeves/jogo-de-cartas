@@ -31,7 +31,7 @@ export const JogoCartas = () => {
           </div>
         ))}
       </div>
-      <div className='container-botao'>
+      <div className='container-botao'> 
         <Button>Adicionar carta</Button>
         <Button>Trocar cartas</Button>
       </div>
