@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Button } from '../../componentStyles/component'
 import { Cartas } from '../../types/types'
-import './JogoCartas.css'
+import './jogoCartas.css'
 
 export const JogoCartas = () => {
   const [cartas, setCartas] = useState<Cartas[]>([])
