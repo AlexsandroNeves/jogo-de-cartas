@@ -3,14 +3,12 @@ import { useEffect, useState } from "react";
 import './home.css'
 import { Cartas } from '../../types/types'
 import { Button } from '../../componentStyles/component';
-import '../../api/cartas.json';
 import axios from 'axios';
 
 const Home = () => {
 
     const [cartas, setCartas] = useState<Cartas[]>([])
     const [busca, setBusca] = useState('')
-
 
     useEffect(() => {
         axios.get(`http://localhost:3000/cards?q=${busca}`)
@@ -19,9 +17,9 @@ const Home = () => {
             });
     })
 
-    const buscarCartas =(e:any)=>{
-       e.preventDefault()
-       console.log('botao clicado');
+    const buscarCartas = (e: any) => {
+        e.preventDefault()
+        console.log('botao clicado');
     }
     return (
         <>
@@ -33,7 +31,6 @@ const Home = () => {
                             <input type="text" className='input--buscar' placeholder='Digite um valor de carta...'
                                 onChange={(ev) => setBusca(ev.target.value)}
                                 value={busca} />
-                            <Button onClick={buscarCartas}> Buscar</Button>
                         </div>
                     </div>
                 </section>
